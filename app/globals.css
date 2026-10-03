@@ -77,3 +77,59 @@ nav{position:fixed;z-index:20;inset:0 0 auto;display:flex;align-items:center;jus
   .skillset{margin-top:17px}.contact{padding-top:80px}.contact>div>p:not(.eyebrow){font-size:.61rem}
   .email{max-width:100%;overflow-wrap:anywhere}.panel :is(article,div,header,footer){min-width:0}
 }
+
+/* Phones use the native, single-column reading flow.  Horizontal sections are
+   reserved for desktop/trackpad, where that interaction is discoverable and
+   does not compete with vertical reading. */
+@media(max-width:760px){
+  html,body{width:100%;height:auto;min-height:100%;overflow-x:clip;overflow-y:auto}
+  .horiz-rail{display:block;width:100%;height:auto;overflow:visible;scroll-snap-type:none;touch-action:pan-y;cursor:auto}
+  .panel{display:block;width:100%;height:auto;min-height:0;overflow:visible;padding:72px 16px 46px;border-right:0;border-bottom:1px solid var(--line);touch-action:pan-y}
+  .hero,.contact{min-height:100svh}
+  .hero{padding-top:92px}
+  .cards{display:grid;grid-template-columns:1fr;overflow:visible;padding:0;margin-top:18px}
+  .cards>div{width:auto;min-width:0}.card{height:auto;min-height:0}.cardcopy{min-height:220px}
+  .binary-strip{margin-bottom:-46px}
+  .rail-controls{display:none}
+}
+
+@media(max-width:480px){
+  .panel{padding:64px 14px 40px}.hero{padding-top:82px}
+  h1{font-size:clamp(1.7rem,8vw,2rem)}h2{font-size:clamp(1.5rem,7.1vw,1.8rem)}
+  .cardcopy{min-height:200px}.binary-strip{margin-bottom:-40px}
+}
+
+/* Final phone layout — a calm, single-column reading experience. */
+@media(max-width:760px){
+  html,body{height:auto;min-height:100%;overflow-x:hidden;overflow-y:auto}
+  nav{height:54px;padding:0 16px}.brand{font-size:1.1rem}nav button{width:28px;height:28px}
+  .links,.scroll-hint,.side-scroll-label,.rail-controls{display:none}
+  .horiz-rail{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y}
+  .horiz-rail .panel{display:block;width:100%;height:auto;min-height:0;overflow:visible;padding:70px 18px 52px;border-right:0;border-bottom:1px solid var(--line)}
+  .horiz-rail .hero,.horiz-rail .contact{min-height:100svh}
+  .horiz-rail .hero{padding-top:82px}.glow{display:none}
+  .hero-copy{max-width:none}.hero h1 span{display:block}
+  h1{font-size:clamp(2.1rem,9.6vw,2.65rem);line-height:.96;letter-spacing:.005em}
+  h2{font-size:clamp(1.8rem,8.2vw,2.25rem);line-height:.98;letter-spacing:.005em}
+  .eyebrow{gap:6px;margin-bottom:11px;font-size:.5rem;letter-spacing:.075em}
+  .hero-copy>p:not(.eyebrow){margin:18px 0;color:var(--muted);font-size:.8rem;line-height:1.6}
+  .actions{gap:8px}.actions a,.email{gap:6px;padding:10px 11px;font-size:.6rem}
+  .terminal-card{position:relative;inset:auto;width:100%;margin-top:25px;padding:13px;font-size:.6rem;line-height:1.45;box-shadow:6px 6px 0 color-mix(in srgb,var(--accent) 70%,transparent);transform:none}
+  .terminal-card p{margin:8px 0 1px}.terminal-head{padding-bottom:8px}.terminal-head b{font-size:.55rem}
+  .about-panel,.experience-panel,.skills-panel{display:block}.about-layout{display:block;margin-top:28px}.about-layout>*+*{margin-top:20px}
+  .bio{font-size:.82rem;line-height:1.65}.bio p{margin-bottom:15px}.current{padding-top:12px;font-size:.64rem;line-height:1.5}
+  .facts{padding:15px;box-shadow:6px 6px 0 var(--accent)}.facts-head{padding-bottom:10px;margin-bottom:10px;font-size:.56rem}.facts code{font-size:.6rem;line-height:1.55}
+  .stats{grid-template-columns:1fr 1fr;margin-top:26px}.stats>div{padding:11px;border-right:1px solid var(--line)}.stats>div:nth-child(2n){border-right:0}.stats small{font-size:.46rem}.stats strong{margin:4px 0;font-size:1.35rem}.stats span{font-size:.5rem}
+  .experience-list{margin-top:26px;gap:10px}.job{grid-template-columns:31px minmax(0,1fr)}.job-index{padding-top:12px;font-size:.53rem}.job article{padding:12px}.period{font-size:.49rem}.job h3,.lead h3,.card h3,.skill h3{font-size:1rem}.job h4{font-size:.58rem}.job ul,.card ul{font-size:.62rem;line-height:1.45}.lead{width:auto;margin-top:20px;padding:15px}.lead h3{font-size:1.1rem}.lead p{font-size:.64rem}
+  .projects-panel{padding-right:18px}.projects-panel .panel-title{position:relative;inset:auto;width:auto}.project-intro{font-size:.68rem;line-height:1.55}
+  .cards{position:relative;left:auto;right:auto;bottom:auto;display:grid;grid-template-columns:1fr;gap:14px;overflow:visible;margin-top:24px;padding:0;scroll-snap-type:none}.cards>div{width:auto;min-width:0}.card{height:auto;min-height:0}.art{min-height:125px}.cardcopy{min-height:0;padding:15px}.cardcopy .eyebrow{font-size:.48rem}.cardcopy>p{font-size:.64rem;line-height:1.5}.cardcopy footer{margin-top:18px}.cardcopy footer span{font-size:.47rem}.cardcopy footer a{font-size:.6rem}
+  .skillset{margin-top:28px}.skill{grid-template-columns:24px minmax(0,1fr);gap:10px;padding:12px 0}.skill>span{font-size:.52rem}.skill h3{font-size:.95rem}.skill div{grid-column:2}.skill b{font-size:.52rem}.binary-strip{position:relative;margin:36px -18px -52px;padding:10px 18px;font-size:.45rem}
+  .contact{display:block;padding-top:88px}.contact>div>p:not(.eyebrow){font-size:.78rem;line-height:1.55}.social{gap:14px;margin-top:20px}.social a{font-size:.62rem}.sitefooter{position:relative;inset:auto;margin-top:45px;font-size:.5rem}
+}
+
+@media(max-width:390px){
+  .horiz-rail .panel{padding-inline:15px}.horiz-rail .hero{padding-top:76px}
+  h1{font-size:2rem}h2{font-size:1.72rem}.hero-copy>p:not(.eyebrow){font-size:.76rem}
+  .terminal-card{padding:11px;font-size:.57rem}.actions a,.email{padding:9px 10px;font-size:.57rem}
+  .bio{font-size:.78rem}.job h3,.lead h3,.card h3,.skill h3{font-size:.94rem}
+}
