@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{--ink:#eef2ea;--paper:#090c10;--muted:#98a09a;--line:rgba(238,242,234,.16);--accent:#b9ff36;--card:#11171d;--cyan:#73d5ff;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--display:Impact,"Arial Narrow",Arial,sans-serif;color-scheme:dark}
-:root[data-theme="light"]{--ink:#101916;--paper:#f3f5ed;--muted:#607068;--line:rgba(16,25,22,.16);--card:#e7ece2;--accent:#5c9d00;--cyan:#007db6;color-scheme:light}
+:root{--ink:#101916;--paper:#f3f5ed;--muted:#607068;--line:rgba(16,25,22,.16);--card:#e7ece2;--accent:#5c9d00;--cyan:#007db6;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--display:Impact,"Arial Narrow",Arial,sans-serif;color-scheme:light}
+:root[data-theme="dark"]{--ink:#eef2ea;--paper:#090c10;--muted:#98a09a;--line:rgba(238,242,234,.16);--accent:#b9ff36;--card:#11171d;--cyan:#73d5ff;color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;overflow:hidden;background:var(--paper);color:var(--ink);font-family:var(--mono)}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}::selection{background:var(--accent);color:#071006}
 .preloader{position:fixed;z-index:30;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:#081008;font:700 1rem var(--mono);letter-spacing:.08em;transition:transform .6s cubic-bezier(.77,0,.18,1)}.loaded .preloader{transform:translateY(-100%)}
 nav{position:fixed;z-index:20;inset:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:19px clamp(20px,3vw,52px);border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--paper) 85%,transparent);backdrop-filter:blur(12px)}.brand{font:900 1.45rem/1 var(--display);letter-spacing:.03em}.brand span{color:var(--accent)}.links{display:flex;gap:clamp(13px,2vw,30px)}.links a{display:flex;gap:5px;color:var(--muted);font-size:.63rem;text-transform:uppercase;letter-spacing:.1em}.links a:hover{color:var(--accent)}.links small{font-size:.52rem;color:var(--accent)}nav button{display:grid;place-items:center;width:33px;height:33px;border:1px solid var(--line);border-radius:50%}.scroll-hint{position:fixed;z-index:19;right:25px;bottom:24px;display:flex;align-items:center;gap:9px;color:var(--muted);font-size:.57rem;letter-spacing:.12em}.scroll-hint i{display:block;width:52px;height:1px;background:var(--line)}
@@ -22,3 +22,58 @@ nav{position:fixed;z-index:20;inset:0 0 auto;display:flex;align-items:center;jus
 
 /* Horizontal canvas controls and direct pointer dragging. */
 .horiz-rail{cursor:grab;overscroll-behavior-x:contain;touch-action:pan-x}.horiz-rail.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}.rail-controls{position:fixed;z-index:21;right:25px;bottom:49px;display:flex;border:1px solid var(--line);background:var(--paper)}.rail-controls button{display:grid;place-items:center;width:38px;height:34px;border-right:1px solid var(--line);font:1.05rem var(--mono);transition:background .2s,color .2s}.rail-controls button:last-child{border:0}.rail-controls button:hover{background:var(--accent);color:#071006}@media(max-width:760px){.rail-controls{display:none}.horiz-rail{cursor:auto;touch-action:auto}}
+
+/* Phone-first type scale and denser vertical rhythm. */
+@media(max-width:760px){
+  nav{padding:14px 18px}.brand{font-size:1.18rem}nav button{width:29px;height:29px}.panel{padding:78px 18px 46px}.eyebrow{margin-bottom:13px;font-size:.52rem;letter-spacing:.08em}h1{font-size:clamp(2.8rem,12.5vw,4rem);line-height:.93}h2{font-size:clamp(2.35rem,10.5vw,3.45rem);line-height:.94}.hero-copy>p:not(.eyebrow){margin:22px 0;font-size:.78rem;line-height:1.65}.actions{gap:7px}.actions a,.email{padding:11px 12px;font-size:.61rem}.terminal-card{margin-top:32px;padding:14px;font-size:.61rem;line-height:1.5;box-shadow:7px 7px 0 color-mix(in srgb,var(--accent) 80%,transparent)}.terminal-card p{margin:9px 0 1px}.side-scroll-label{display:none}.about-layout{gap:26px;margin-top:32px}.bio{font-size:.78rem;line-height:1.62}.bio p{margin-bottom:15px}.current{padding-top:12px;font-size:.59rem;line-height:1.5}.facts{padding:17px;box-shadow:6px 6px 0 var(--accent)}.facts code{font-size:.59rem;line-height:1.5}.facts-head{padding-bottom:10px;margin-bottom:10px;font-size:.56rem}.stats{margin-top:27px}.stats>div{padding:11px}.stats small{font-size:.46rem}.stats strong{font-size:1.45rem}.stats span{font-size:.5rem;line-height:1.25}.experience-list{margin-top:28px;gap:9px}.job{grid-template-columns:34px 1fr}.job-index{padding-top:13px;font-size:.55rem}.job article{padding:12px}.period{font-size:.48rem}.job h3,.lead h3,.card h3,.skill h3{font-size:1rem}.job h4{font-size:.56rem}.job ul,.card ul{font-size:.57rem;line-height:1.42}.lead{padding:16px}.lead h3{font-size:1.15rem}.lead p{font-size:.59rem}.projects-panel .panel-title{margin-bottom:0}.project-intro{font-size:.62rem;line-height:1.5}.cards{gap:12px;margin-top:24px}.card{height:405px}.art{min-height:132px}.cardcopy{padding:14px}.cardcopy .eyebrow{font-size:.47rem}.cardcopy>p{font-size:.59rem;line-height:1.45}.cardcopy footer span{font-size:.45rem}.cardcopy footer a{font-size:.58rem}.skillset{margin-top:29px}.skill{grid-template-columns:25px 1fr;gap:10px;padding:12px 0}.skill>span{font-size:.52rem}.skill h3{font-size:.95rem}.skill b{padding:4px 5px;font-size:.49rem}.binary-strip{font-size:.46rem}.contact>div>p:not(.eyebrow){font-size:.72rem;line-height:1.55}.social{gap:14px;margin-top:21px}.social a{font-size:.59rem}.sitefooter{margin-top:43px;font-size:.5rem}.scroll-hint{display:none}
+}
+
+/* Compact phone canvas: swipe between sections; scroll within a section when it
+   contains more content than the viewport.  This keeps the horizontal concept
+   without forcing the page typography to be oversized. */
+@media(max-width:760px){
+  html,body{width:100%;height:100%;overflow:hidden}
+  .horiz-rail{display:flex;width:100%;height:100dvh;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;touch-action:pan-y}
+  .horiz-rail::-webkit-scrollbar{display:none}
+  .panel{flex:0 0 100%;width:100%;height:100dvh;min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;scroll-snap-align:start;padding:70px 16px 52px;border-right:1px solid var(--line);border-bottom:0;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+  .panel:before{background-size:36px 36px}
+  .hero{display:block;padding-top:92px}
+  .hero-copy{max-width:none}
+  h1{font-size:clamp(2.15rem,9.5vw,2.7rem);line-height:.95;letter-spacing:.01em}
+  h2{font-size:clamp(1.9rem,8.5vw,2.35rem);line-height:.97;letter-spacing:.01em}
+  .eyebrow{gap:5px;margin-bottom:10px;font-size:.46rem;letter-spacing:.065em}
+  .eyebrow svg{width:11px;height:11px}
+  .hero-copy>p:not(.eyebrow){margin:16px 0;font-size:.69rem;line-height:1.55}
+  .actions{gap:6px}.actions a,.email{gap:6px;padding:9px 10px;font-size:.55rem}
+  .actions svg,.email svg{width:13px;height:13px}
+  .terminal-card{width:100%;margin-top:24px;padding:12px;font-size:.55rem;line-height:1.45;box-shadow:5px 5px 0 color-mix(in srgb,var(--accent) 80%,transparent)}
+  .terminal-card p{margin:7px 0 1px}.terminal-head{padding-bottom:8px}.terminal-head b{font-size:.5rem}
+  .about-panel,.experience-panel,.skills-panel{display:block}
+  .about-layout{display:block;margin-top:23px}.about-layout>*+*{margin-top:18px}
+  .bio{font-size:.68rem;line-height:1.55}.bio p{margin-bottom:12px}.current{padding-top:10px;font-size:.53rem;line-height:1.45}
+  .facts{padding:13px;box-shadow:5px 5px 0 var(--accent)}.facts-head{padding-bottom:8px;margin-bottom:8px;font-size:.5rem}.facts-head svg{width:15px;height:15px}.facts code{font-size:.52rem;line-height:1.45}
+  .stats{grid-template-columns:1fr 1fr;margin-top:21px}.stats>div{padding:9px}.stats small{font-size:.42rem}.stats strong{margin:3px 0;font-size:1.2rem}.stats span{font-size:.44rem}
+  .experience-list{margin-top:22px;gap:7px}.job{grid-template-columns:27px 1fr}.job-index{padding-top:10px;font-size:.48rem}.job article{padding:10px}.period{margin-bottom:5px;font-size:.43rem}.job h3,.lead h3,.card h3,.skill h3{font-size:.88rem}.job h4{margin:4px 0;font-size:.5rem}.job ul,.card ul{margin-top:8px;font-size:.52rem;line-height:1.35}.job li,.card li{margin:4px 0}.lead{width:auto;margin-top:17px;padding:13px}.lead span{font-size:.45rem}.lead h3{margin-top:9px;font-size:1rem}.lead p{font-size:.54rem;line-height:1.45}
+  .projects-panel{padding-right:16px}.projects-panel .panel-title{position:relative;inset:auto;width:auto}.project-intro{font-size:.55rem;line-height:1.45}.cards{position:relative;left:auto;right:auto;bottom:auto;display:flex;overflow-x:auto;gap:9px;margin-top:17px;padding:6px 0 12px;scroll-snap-type:x mandatory}.cards>div{flex:0 0 calc(100% - 22px);width:auto}.card{height:345px}.art{min-height:105px}.art>span{top:10px;left:11px;font-size:.5rem}.art code{right:10px;bottom:6px;font-size:.9rem}.cardcopy{padding:11px}.cardcopy .eyebrow{margin-bottom:5px;font-size:.42rem}.cardcopy>p{font-size:.53rem;line-height:1.35}.cardcopy footer span{padding:3px 4px;font-size:.4rem}.cardcopy footer a{font-size:.51rem}.cardcopy footer a svg{width:13px;height:13px}
+  .skillset{margin-top:22px}.skill{grid-template-columns:20px 1fr;gap:7px;padding:9px 0}.skill>span{font-size:.47rem}.skill h3{font-size:.82rem}.skill div{grid-column:2;gap:4px}.skill b{padding:3px 4px;font-size:.44rem}.binary-strip{position:relative;margin:29px -16px -52px;padding:9px 16px;font-size:.4rem}
+  .contact{display:block;min-height:100dvh;padding-top:100px}.contact>div>p:not(.eyebrow){font-size:.65rem;line-height:1.5}.social{gap:10px;margin-top:17px}.social a{font-size:.53rem}.social svg{width:11px;height:11px}.sitefooter{position:relative;inset:auto;margin-top:36px;font-size:.45rem}
+  .rail-controls{display:flex;right:12px;bottom:max(12px,env(safe-area-inset-bottom));box-shadow:3px 3px 0 color-mix(in srgb,var(--accent) 65%,transparent)}.rail-controls button{width:34px;height:30px;font-size:.9rem}
+}
+
+/* Small phones (including 360–430 px wide screens): keep every line within the
+   viewport and make the display type feel like interface text, not a poster. */
+@media(max-width:480px){
+  nav{padding:11px 14px}.brand{font-size:1.02rem}nav button{width:27px;height:27px}
+  .panel{padding:62px 14px 48px}
+  .hero{padding-top:80px}
+  h1{font-size:clamp(1.8rem,8.4vw,2.15rem);line-height:.98}
+  h2{font-size:clamp(1.6rem,7.6vw,1.95rem);line-height:1}
+  .eyebrow{font-size:.43rem}.hero-copy>p:not(.eyebrow){font-size:.65rem;line-height:1.5}
+  .terminal-card{margin-top:18px;padding:10px;font-size:.52rem}.actions a,.email{font-size:.52rem;padding:8px 9px}
+  .about-layout{margin-top:18px}.bio{font-size:.64rem}.facts{padding:11px}.facts code{font-size:.49rem}
+  .stats{margin-top:17px}.stats>div{padding:8px}.stats strong{font-size:1.05rem}
+  .experience-list{margin-top:17px}.job article{padding:9px}.job h3,.lead h3,.card h3,.skill h3{font-size:.82rem}
+  .cards>div{flex-basis:calc(100% - 16px)}.card{height:330px}.cardcopy{padding:10px}
+  .skillset{margin-top:17px}.contact{padding-top:80px}.contact>div>p:not(.eyebrow){font-size:.61rem}
+  .email{max-width:100%;overflow-wrap:anywhere}.panel :is(article,div,header,footer){min-width:0}
+}
