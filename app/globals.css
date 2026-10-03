@@ -133,3 +133,20 @@ nav{position:fixed;z-index:20;inset:0 0 auto;display:flex;align-items:center;jus
   .terminal-card{padding:11px;font-size:.57rem}.actions a,.email{padding:9px 10px;font-size:.57rem}
   .bio{font-size:.78rem}.job h3,.lead h3,.card h3,.skill h3{font-size:.94rem}
 }
+
+/* Keep the first phone screen focused on the introduction. */
+@media(max-width:760px){
+  .horiz-rail .panel{padding:64px 16px 46px}
+  .horiz-rail .hero{min-height:auto;padding-top:78px;padding-bottom:54px}
+  .hero h1{font-size:clamp(1.9rem,8.8vw,2.25rem);line-height:1}
+  .panel h2{font-size:clamp(1.65rem,7.6vw,2rem);line-height:1}
+  .hero-copy>p:not(.eyebrow){max-width:34ch;margin:16px 0;font-size:.76rem;line-height:1.58}
+  .terminal-card{display:none}
+  .actions a{min-height:38px}.actions a,.email{font-size:.57rem}
+  .about-layout{margin-top:22px}.experience-list{margin-top:22px}.cards{margin-top:20px}
+}
+
+@media(max-width:390px){
+  .horiz-rail .panel{padding-inline:14px}.horiz-rail .hero{padding-top:72px}
+  .hero h1{font-size:1.82rem}.panel h2{font-size:1.58rem}
+}
